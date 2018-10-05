@@ -46,6 +46,7 @@
 			children = (
 				CC0B1F642149C1790066FA25 /* pinscore */,
 				CC0B1F632149C1790066FA25 /* Products */,
+				CC0B1F6B2149C1790066FA25 /* GameScene.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,7 +64,6 @@
 				CC0B1F652149C1790066FA25 /* AppDelegate.swift */,
 				CC0B1F672149C1790066FA25 /* GameScene.sks */,
 				CC0B1F692149C1790066FA25 /* Actions.sks */,
-				CC0B1F6B2149C1790066FA25 /* GameScene.swift */,
 				CC0B1F6D2149C1790066FA25 /* GameViewController.swift */,
 				CC0B1F6F2149C1790066FA25 /* Main.storyboard */,
 				CC0B1F722149C17A0066FA25 /* Assets.xcassets */,
