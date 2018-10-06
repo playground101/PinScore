@@ -10,19 +10,22 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate{
-
-  var ball : SKSpriteNode?
-
+    
+    var ball : SKSpriteNode?
+    var ballCounter = 0
+    
     override func didMove(to view: SKView) {
     ball = self.childNode(withName: "ball") as? SKSpriteNode
                 self.physicsWorld.contactDelegate = self
 
 }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+
+        if ballCounter < 9 {
+
         let location = touches.first?.location(in: self)
-       // ball?.position = location!
         createApple(point: CGPoint(x: CGFloat((location?.x)!), y: CGFloat(self.frame.height/2)) )
+        }
     }
     
     func createApple(point: CGPoint) {
@@ -31,7 +34,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         ball?.position = point
         ball?.physicsBody = SKPhysicsBody(circleOfRadius: (ball?.size.width)!/2)
         self.addChild(ball!)
+        ballCounter += 1
     }
-
 }
+
+
+
 
