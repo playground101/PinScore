@@ -60,9 +60,9 @@
 		CC0B1F642149C1790066FA25 /* pinscore */ = {
 			isa = PBXGroup;
 			children = (
-				04D8ACF821694FBC0040AF2A /* GameScene.swift */,
 				CC0B1F652149C1790066FA25 /* AppDelegate.swift */,
 				CC0B1F672149C1790066FA25 /* GameScene.sks */,
+				04D8ACF821694FBC0040AF2A /* GameScene.swift */,
 				CC0B1F692149C1790066FA25 /* Actions.sks */,
 				CC0B1F6D2149C1790066FA25 /* GameViewController.swift */,
 				CC0B1F6F2149C1790066FA25 /* Main.storyboard */,
