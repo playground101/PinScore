@@ -9,13 +9,12 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate{
     
-    var ball : SKSpriteNode?
+    var ball: SKSpriteNode?
     var ballCounter = 0
     
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
         self.physicsWorld.contactDelegate = self
-        
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
