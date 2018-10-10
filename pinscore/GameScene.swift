@@ -9,8 +9,9 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate{
     
-    var ball: SKSpriteNode?
+    var ball: SKSpriteNode!
     var ballCounter = 0
+    var scoreLabel: SKLabelNode!
     
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
