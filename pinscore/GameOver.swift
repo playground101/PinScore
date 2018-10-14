@@ -12,7 +12,7 @@ import GameplayKit
 class GameOverScene: SKScene {
     var finalScore: SKLabelNode?
     var restart: SKLabelNode?
-    
+    var scoreLabel: Int = 0
     
     override func didMove(to view: SKView) {
         finalScore = self.childNode(withName: "FinalScore") as? SKLabelNode
@@ -20,6 +20,13 @@ class GameOverScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let location = touches.first?.location(in: self)
+        for touch in touches {
+            let points = touch.location(in: self)
+            if restart!.contains(points) {
+                let gameScene = GameScene(fileNamed: "GameScene")
+                gameScene?.scaleMode = .aspectFill
+                self.view?.presentScene(gameScene!)
+            }
+        }
     }
 }
