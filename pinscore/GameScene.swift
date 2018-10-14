@@ -36,6 +36,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         self.addChild(ball!)
         ballCounter += 1
     }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+    }
 }
 
 
