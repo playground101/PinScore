@@ -21,7 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if ballCounter < 9 {
+        if ballCounter < 10 {
             
             let location = touches.first?.location(in: self)
             createBall(point: CGPoint(x: CGFloat((location?.x)!), y: CGFloat(self.frame.height/2)) )
