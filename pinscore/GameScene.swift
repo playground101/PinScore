@@ -31,7 +31,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        
+        if <#condition#> {
+            <#code#>
+        }
     }
     
     func createBall(point: CGPoint) {
