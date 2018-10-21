@@ -12,7 +12,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var ballCounter = 0
     var scoreLabel: SKLabelNode!
     var count = 0
-    var score = 100
+    var score = 50
 
     var ballsLeftCounter : SKLabelNode!
     var ballsLeft = 10

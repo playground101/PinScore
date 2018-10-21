@@ -21,7 +21,13 @@ class GameOverScene: SKScene {
         restartLabel = self.childNode(withName: "Restart") as? SKLabelNode
         highScoreLabel = self.childNode(withName: "HighScore") as? SKLabelNode
         scoreLabel?.text = "Score: \(score)"
-        highScoreLabel?.text = "High Score: \(highScore)"
+
+        let defaultHighScore = UserDefaults.standard.integer(forKey: "highscore")
+        if defaultHighScore < score {
+            UserDefaults.standard.set(score, forKey: "highscore")
+        }
+        highScoreLabel?.text = "High Score: \(UserDefaults.standard.integer(forKey: "highscore"))"
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
