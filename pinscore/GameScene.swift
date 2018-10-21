@@ -12,6 +12,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var ballCounter = 0
     var scoreLabel: SKLabelNode!
     var count = 0
+    var score = 100
 
     var ballsLeftCounter : SKLabelNode!
     var ballsLeft = 10
@@ -47,7 +48,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let videoGameOver = GameOverScene(fileNamed: "GameOverScene")
         videoGameOver?.size = self.size
         videoGameOver?.scaleMode = .aspectFill
-        videoGameOver?.scoreLabel = count
+        videoGameOver?.score = score
         let transition = SKTransition.fade(withDuration: 1.0)
         self.view?.presentScene(videoGameOver! , transition: transition)
     }
