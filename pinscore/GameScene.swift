@@ -13,8 +13,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreLabel: SKLabelNode!
     var count = 0
 
+    var ballsLeftCounter : SKLabelNode!
+    var ballsLeft = 10
+    
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
+        ballsLeftCounter = self.childNode(withName: "BallsLeft") as? SKLabelNode
         self.physicsWorld.contactDelegate = self
     }
     
@@ -36,6 +40,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball?.physicsBody = SKPhysicsBody(circleOfRadius: (ball?.size.width)!/2)
         self.addChild(ball!)
         ballCounter += 1
+        ballsLeft -= 1
+        ballsLeftCounter.text = "Balls Left: \(ballsLeft)"
     }
     func gameOverScene() {
         let videoGameOver = GameOverScene(fileNamed: "GameOverScene")
