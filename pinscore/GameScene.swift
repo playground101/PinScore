@@ -7,34 +7,27 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate{
-    
+class GameScene: SKScene, SKPhysicsContactDelegate {
     var ball: SKSpriteNode!
     var ballCounter = 0
     var scoreLabel: SKLabelNode!
     var count = 0
-    
+
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
         self.physicsWorld.contactDelegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         if ballCounter < 10 {
             
             let location = touches.first?.location(in: self)
             createBall(point: CGPoint(x: CGFloat((location?.x)!), y: CGFloat(self.frame.height/2)) )
         } else {
             gameOverScene()
-        }
+        } 
     }
     
-    func didBegin(_ contact: SKPhysicsContact) {
-        if <#condition#> {
-            <#code#>
-        }
-    }
     
     func createBall(point: CGPoint) {
         ball = SKSpriteNode(imageNamed:"Circle")
@@ -51,5 +44,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         videoGameOver?.scoreLabel = count
         let transition = SKTransition.fade(withDuration: 1.0)
         self.view?.presentScene(videoGameOver! , transition: transition)
+    }
+    
+    func startScene() {
+        let startGame = StartScene(fileNamed: "StartScene")
+        startGame?.size = self.size
+        startGame?.scaleMode = .aspectFill
+        let transition = SKTransition.fade(withDuration: 1.0)
+        self.view?.presentScene(startGame!, transition: transition)
+        
     }
 }
