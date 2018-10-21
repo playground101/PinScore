@@ -2,7 +2,7 @@
 //  GameOver.swift
 //  pinscore
 //
-//  Created by AnishG on 10/14/18.
+//  Created by Anish on 10/14/18.
 //  Copyright © 2018 Varshith. All rights reserved.
 //
 
