@@ -1,7 +1,7 @@
 //  GameScene.swift
 //  pinscore
 //
-//  Created by Varshith on 9/12/18.
+//  Created by Varshith, Anish, and Karan on 9/12/18.
 //  Copyright © 2018 Varshith. All rights reserved.
 
 import SpriteKit

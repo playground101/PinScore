@@ -2,7 +2,7 @@
 //  StartScene.swift
 //  pinscore
 //
-//  Created by user141824 on 10/20/18.
+//  Created by Karan on 10/20/18.
 //  Copyright © 2018 Varshith. All rights reserved
 
 import SpriteKit

@@ -2,7 +2,7 @@
 //  GameViewController.swift
 //  pinscore
 //
-//  Created by Kalyani Pallerla on 9/12/18.
+//  Created by Karan, Varshith, and Anish on 9/12/18.
 //  Copyright © 2018 Varshith. All rights reserved.
 //
 
