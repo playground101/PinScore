@@ -52,12 +52,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.view?.presentScene(videoGameOver! , transition: transition)
     }
     
-    func startScene() {
-        let startGame = StartScene(fileNamed: "StartScene")
-        startGame?.size = self.size
-        startGame?.scaleMode = .aspectFill
-        let transition = SKTransition.fade(withDuration: 1.0)
-        self.view?.presentScene(startGame!, transition: transition)
-        
-    }
 }
