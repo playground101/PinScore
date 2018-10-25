@@ -13,7 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreLabel: SKLabelNode!
     var count = 0
     var score = 50
-
+    
     var ballsLeftCounter : SKLabelNode!
     var ballsLeft = 10
     
@@ -36,9 +36,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func createBall(point: CGPoint) {
         ball = SKSpriteNode(imageNamed:"Circle")
+        ball.name = "ball"
         ball?.size = CGSize(width: 50, height: 50)
         ball?.position = point
         ball?.physicsBody = SKPhysicsBody(circleOfRadius: (ball?.size.width)!/2)
+        ball.physicsBody?.contactTestBitMask = 1
         self.addChild(ball!)
         ballCounter += 1
         ballsLeft -= 1
@@ -52,5 +54,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let transition = SKTransition.fade(withDuration: 1.0)
         self.view?.presentScene(videoGameOver! , transition: transition)
     }
-    
+    func faded(node : SKSpriteNode) {
+        let fade = SKAction(named: "Pulse")
+        ball.run(fade!)
+    }
+    func didBegin(_ contact: SKPhysicsContact) {
+        var nameA = ""
+        var nameB = ""
+        
+        guard contact.bodyA.node != nil && contact.bodyB.node != nil else {
+            return
+        }
+        if let node = contact.bodyA.node {
+            if let name = node.name {
+                nameA = name
+            }
+        }
+        
+        if let node = contact.bodyB.node {
+            
+            if let name = node.name {
+                nameB = name
+            }
+        }
+        
+        if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
+            
+            print(nameA)
+            print(nameB)
+            if ((nameA == "ball") && (nameB == "platform10One")) || ((nameA == "platform10One") && (nameB == "ball")) {
+                faded(node: ball)
+                print("contact")
+            }
+        }
+    }
 }
