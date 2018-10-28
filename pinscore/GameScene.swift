@@ -81,7 +81,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
             
-            
              if ((nameA == "ball") && (nameB == "platform10One")) || ((nameA == "platform10One") && (nameB == "ball")) {
              faded(node: ball)
              print("contact")
