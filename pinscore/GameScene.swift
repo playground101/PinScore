@@ -88,4 +88,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+    
+    override func update(_ currentTime: TimeInterval){
+        enumerateChildNodes(withName: "ball") { (node, block) in
+            if node.alpha < 0.2 {
+                node.removeFromParent()
+            }
+        }
+    }
 }
+
+
