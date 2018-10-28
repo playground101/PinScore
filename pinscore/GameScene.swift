@@ -11,8 +11,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var ball: SKSpriteNode!
     var ballCounter = 0
     var scoreLabel: SKLabelNode!
-    var count = 0
-    var score = 50
+    var score = 0
     
     var ballsLeftCounter : SKLabelNode!
     var ballsLeft = 10
@@ -61,10 +60,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.run(fade!)
     }
     
-    fileprivate func scoreManager(_ contactA: String, _ contactB: String, _ nameA: String, _ nameB: String, _ score: Int) {
+    fileprivate func scoreManager(_ contactA: String, _ contactB: String, _ nameA: String, _ nameB: String, _ gameScore: Int) {
         if (contactA == nameA && contactB == nameB) || (contactA == nameB && contactB == nameA){
-            count += score
-            scoreLabel.text = "\(count)"
+            score += gameScore
+            scoreLabel.text = "\(score)"
         }
     }
     
