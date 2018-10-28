@@ -61,6 +61,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.run(fade!)
     }
     
+    fileprivate func scoreManager(_ contactA: String, _ contactB: String, _ nameA: String, _ nameB: String, _ score: Int) {
+        if (contactA == nameA && contactB == nameB) || (contactA == nameB && contactB == nameA){
+            count += score
+            scoreLabel.text = "\(count)"
+        }
+    }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         var nameA = ""
         var nameB = ""
@@ -87,26 +94,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 faded(node: ball)
                 print("contact")
             }
-            
-            if (nameA == "ball" && nameB == "platform10") || (nameA == "platform10" && nameB == "ball"){
-                count += 10
-                scoreLabel.text = "\(count)"
-            }
-            
-            if (nameA == "ball" && nameB == "platform20") || (nameA == "platform20" && nameB == "ball") {
-                count += 20
-                scoreLabel.text = "\(count)"
-            }
-            
-            if (nameA == "ball" && nameB == "platform30") || (nameA == "platform30" && nameB == "ball"){
-                count += 30
-                scoreLabel.text = "\(count)"
-            }
-            
-            if (nameA == "ball" && nameB == "platform40") || (nameA == "platform40" && nameB == "ball") {
-                count += 40
-                scoreLabel.text = "\(count)"
-            }
+            scoreManager(nameA, nameB, "ball", "platform10", 10)
+            scoreManager(nameA, nameB, "ball", "platform20", 20)
+            scoreManager(nameA, nameB, "ball", "platform30", 30)
+            scoreManager(nameA, nameB, "ball", "platform40", 40)
         }
     }
     
