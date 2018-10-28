@@ -34,7 +34,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } 
     }
     
-    
     func createBall(point: CGPoint) {
         ball = SKSpriteNode(imageNamed:"Circle")
         ball.name = "ball"
@@ -47,6 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ballsLeft -= 1
         ballsLeftCounter.text = "Balls Left: \(ballsLeft)"
     }
+    
     func gameOverScene() {
         let videoGameOver = GameOverScene(fileNamed: "GameOverScene")
         videoGameOver?.size = self.size
@@ -55,10 +55,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let transition = SKTransition.fade(withDuration: 1.0)
         self.view?.presentScene(videoGameOver! , transition: transition)
     }
+    
     func faded(node : SKSpriteNode) {
         let fade = SKAction(named: "Pulse")
         ball.run(fade!)
     }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         var nameA = ""
         var nameB = ""
@@ -81,46 +83,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
             
-             if ((nameA == "ball") && (nameB == "platform10One")) || ((nameA == "platform10One") && (nameB == "ball")) {
-             faded(node: ball)
-             print("contact")
-             }
- 
+            if ((nameA == "ball") && (nameB.starts(with: "platform"))) || ((nameA.starts(with: "platform")) && (nameB == "ball")) {
+                faded(node: ball)
+                print("contact")
+            }
             
-            if (nameA == "ball" && nameB == "platform10One") || (nameA == "platform10One" && nameB == "ball"){
+            if (nameA == "ball" && nameB == "platform10") || (nameA == "platform10" && nameB == "ball"){
                 count += 10
                 scoreLabel.text = "\(count)"
             }
             
-            if (nameA == "ball" && nameB == "platform10Two") || (nameA == "platform10Two" && nameB == "ball") {
-                count += 10
-                scoreLabel.text = "\(count)"
-            }
-            
-            if (nameA == "ball" && nameB == "platform20One") || (nameA == "platform20One" && nameB == "ball") {
-                count += 20
-                scoreLabel.text = "\(count)"
-            }
-            if (nameA == "ball" && nameB == "platform20Two") || (nameA == "platform20Two" && nameB == "ball") {
+            if (nameA == "ball" && nameB == "platform20") || (nameA == "platform20" && nameB == "ball") {
                 count += 20
                 scoreLabel.text = "\(count)"
             }
             
-            if (nameA == "ball" && nameB == "platform30One") || (nameA == "platform30One" && nameB == "ball"){
-                count += 30
-                scoreLabel.text = "\(count)"
-            }
-            if(nameA == "ball" && nameB == "platform30Two") || (nameA == "platform30Two" && nameB == "ball") {
+            if (nameA == "ball" && nameB == "platform30") || (nameA == "platform30" && nameB == "ball"){
                 count += 30
                 scoreLabel.text = "\(count)"
             }
             
-            if (nameA == "ball" && nameB == "platform40One") || (nameA == "platform40One" && nameB == "ball") {
-                count += 40
-                scoreLabel.text = "\(count)"
-            }
-            
-            if (nameA == "ball" && nameB == "platform40Two") || (nameA == "platform40Two" && nameB == "ball") {
+            if (nameA == "ball" && nameB == "platform40") || (nameA == "platform40" && nameB == "ball") {
                 count += 40
                 scoreLabel.text = "\(count)"
             }
@@ -135,5 +118,3 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
-
-
