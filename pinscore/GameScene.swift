@@ -88,7 +88,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
              }
              */
             
-            
             if (nameA == "ball" && nameB == "platform10One") || (nameA == "platform10One" && nameB == "ball"){
                 count += 10
                 scoreLabel.text = "\(count)"
