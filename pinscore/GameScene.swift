@@ -20,6 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
         ballsLeftCounter = self.childNode(withName: "BallsLeft") as? SKLabelNode
+        scoreLabel = self.childNode(withName: "scoreLabel") as? SKLabelNode
         self.physicsWorld.contactDelegate = self
     }
     
@@ -80,11 +81,50 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
             
-            print(nameA)
-            print(nameB)
-            if ((nameA == "ball") && (nameB == "platform10One")) || ((nameA == "platform10One") && (nameB == "ball")) {
-                faded(node: ball)
-                print("contact")
+            /*
+             if ((nameA == "ball") && (nameB == "platform10One")) || ((nameA == "platform10One") && (nameB == "ball")) {
+             faded(node: ball)
+             print("contact")
+             }
+             */
+            
+            
+            if (nameA == "ball" && nameB == "platform10One") || (nameA == "platform10One" && nameB == "ball"){
+                count += 10
+                scoreLabel.text = "\(count)"
+            }
+            
+            if (nameA == "ball" && nameB == "platform10Two") || (nameA == "platform10Two" && nameB == "ball") {
+                count += 10
+                scoreLabel.text = "\(count)"
+            }
+            
+            if (nameA == "ball" && nameB == "platform20One") || (nameA == "platform20One" && nameB == "ball") {
+                count += 20
+                scoreLabel.text = "\(count)"
+            }
+            if (nameA == "ball" && nameB == "platform20Two") || (nameA == "platform20Two" && nameB == "ball") {
+                count += 20
+                scoreLabel.text = "\(count)"
+            }
+            
+            if (nameA == "ball" && nameB == "platform30One") || (nameA == "platform30One" && nameB == "ball"){
+                count += 30
+                scoreLabel.text = "\(count)"
+            }
+            if(nameA == "ball" && nameB == "platform30Two") || (nameA == "platform30Two" && nameB == "ball") {
+                count += 30
+                scoreLabel.text = "\(count)"
+            }
+            
+            if (nameA == "ball" && nameB == "platform40One") || (nameA == "platform40One" && nameB == "ball") {
+                count += 40
+                scoreLabel.text = "\(count)"
+            }
+            
+            if (nameA == "ball" && nameB == "platform40Two") || (nameA == "platform40Two" && nameB == "ball") {
+                count += 40
+                scoreLabel.text = "\(count)"
             }
         }
     }
