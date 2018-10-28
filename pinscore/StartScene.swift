@@ -10,9 +10,20 @@ import GameplayKit
 
 class StartScene: SKScene {
     var start: SKLabelNode?
+    var highScoreLabel: SKLabelNode?
+    var score = 0
+    var highScore = 0
     
     override func didMove(to view: SKView) {
         start = self.childNode(withName: "start") as? SKLabelNode
+        highScoreLabel = self.childNode(withName: "highScore") as? SKLabelNode
+        
+        let defaultHighScore = UserDefaults.standard.integer(forKey: "highscore")
+        if defaultHighScore < score {
+            UserDefaults.standard.set(score, forKey: "highscore")
+        }
+        highScoreLabel?.text = "High Score: \(UserDefaults.standard.integer(forKey: "highscore"))"
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
