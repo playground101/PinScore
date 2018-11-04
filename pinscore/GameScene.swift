@@ -15,6 +15,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var ballsLeftCounter : SKLabelNode!
     var ballsLeft = 10
+    var spawnBall = true
+    var startTime: TimeInterval?
+    var endTime: TimeInterval?
     
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
@@ -34,16 +37,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createBall(point: CGPoint) {
-        ball = SKSpriteNode(imageNamed:"Circle")
-        ball.name = "ball"
-        ball?.size = CGSize(width: 50, height: 50)
-        ball?.position = point
-        ball?.physicsBody = SKPhysicsBody(circleOfRadius: (ball?.size.width)!/2)
-        ball.physicsBody?.contactTestBitMask = 1
-        self.addChild(ball!)
-        ballCounter += 1
-        ballsLeft -= 1
-        ballsLeftCounter.text = "Balls Left: \(ballsLeft)"
+        if spawnBall == true {
+            ball = SKSpriteNode(imageNamed:"Circle")
+            ball.name = "ball"
+            ball?.size = CGSize(width: 50, height: 50)
+            ball?.position = point
+            ball?.physicsBody = SKPhysicsBody(circleOfRadius: (ball?.size.width)!/2)
+            ball.physicsBody?.contactTestBitMask = 1
+            self.addChild(ball!)
+            ballCounter += 1
+            ballsLeft -= 1
+            ballsLeftCounter.text = "Balls Left: \(ballsLeft)"
+            spawnBall = false
+            startTime = Date().timeIntervalSince1970
+        }
     }
     
     func gameOverScene() {
@@ -104,6 +111,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         enumerateChildNodes(withName: "ball") { (node, block) in
             if node.alpha < 0.2 {
                 node.removeFromParent()
+                self.spawnBall = true
+            } else if !self.spawnBall {
+                if let start = self.startTime, Date().timeIntervalSince1970 - start > 5.0 {
+                    self.faded(node: self.ball)
+                   node.removeFromParent()
+                   self.spawnBall = true
+                }
             }
         }
     }
