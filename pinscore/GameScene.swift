@@ -63,7 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func faded(node : SKSpriteNode) {
-        let fade = SKAction(named: "Pulse")
+        let fade = SKAction(named: "Pop")
         ball.run(fade!)
     }
     
@@ -122,3 +122,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
+
