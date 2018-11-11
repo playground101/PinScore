@@ -6,6 +6,7 @@
 
 import SpriteKit
 import GameplayKit
+import Foundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var ball: SKSpriteNode!
@@ -18,8 +19,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var spawnBall = true
     var startTime: TimeInterval?
     var endTime: TimeInterval?
-    var postionOne : CGPoint?
+    var positionOne : CGPoint?
     var positionTwo : CGPoint?
+
     
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
@@ -123,10 +125,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 node.removeFromParent()
                 self.spawnBall = true
             } else if !self.spawnBall {
-                    self.positionTwo = self.postionOne
-                    self.postionOne = self.ball.position
-                    if self.positionTwo == self.postionOne {
-                        self.faded(node: self.ball)
+                    self.positionTwo = self.positionOne
+                    self.positionOne = self.ball.position
+/*                var diffX = Double(self.positionOne?.x ?? 0) - Double(self.positionTwo?.x ?? 0)
+                var diffY = Double(self.positionOne?.y ?? 0) - Double(self.positionTwo?.y ?? 0)*/
+                
+                if self.positionTwo == self.positionOne {                        self.faded(node: self.ball)
                         node.removeFromParent()
                         self.spawnBall = true
                         

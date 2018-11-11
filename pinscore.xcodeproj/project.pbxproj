@@ -71,8 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				B29851EC217C1EF500A093BA /* StartScene.sks */,
-				F4579E5921696637005174AB /* GameScene.sks */,
 				B29851EE217C20AB00A093BA /* StartScene.swift */,
+				F4579E5921696637005174AB /* GameScene.sks */,
 				04D8ACF821694FBC0040AF2A /* GameScene.swift */,
 				CC0B1F652149C1790066FA25 /* AppDelegate.swift */,
 				F46770062173661A006501A8 /* GameOverScene.sks */,
@@ -314,6 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LK44RL798Y;
 				INFOPLIST_FILE = pinscore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -331,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LK44RL798Y;
 				INFOPLIST_FILE = pinscore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
