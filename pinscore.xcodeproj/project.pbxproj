@@ -33,6 +33,7 @@
 		CC0B1F722149C17A0066FA25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC0B1F752149C17A0066FA25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC0B1F772149C17A0066FA25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC108D962197BD5E004693B2 /* Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Pop.mp3; path = /Users/kalyani.pallerla/Desktop/Playground101/PinScore/pinscore/Pop.mp3; sourceTree = "<absolute>"; };
 		F4579E5921696637005174AB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		F46770062173661A006501A8 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 		F467700821736697006501A8 /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 				F467700821736697006501A8 /* GameOver.swift */,
 				CC0B1F692149C1790066FA25 /* Actions.sks */,
 				CC0B1F6D2149C1790066FA25 /* GameViewController.swift */,
+				CC108D962197BD5E004693B2 /* Pop.mp3 */,
 				CC0B1F6F2149C1790066FA25 /* Main.storyboard */,
 				CC0B1F722149C17A0066FA25 /* Assets.xcassets */,
 				CC0B1F742149C17A0066FA25 /* LaunchScreen.storyboard */,

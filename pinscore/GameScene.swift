@@ -74,6 +74,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func pop(node: SKNode) {
+        let sound = SKAction.playSoundFileNamed("Pop", waitForCompletion: true)
+        self.run(sound)
+        print("sound \(sound)")
+    }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         var nameA = ""
         var nameB = ""
@@ -97,6 +103,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
             
             if ((nameA == "ball") && (nameB.starts(with: "platform"))) || ((nameA.starts(with: "platform")) && (nameB == "ball")) {
+                pop(node: contact.bodyA.node!)
+                
                 faded(node: ball)
                 print("contact")
             }
