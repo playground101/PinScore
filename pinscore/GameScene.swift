@@ -18,6 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var spawnBall = true
     var startTime: TimeInterval?
     var endTime: TimeInterval?
+    var postionOne : CGPoint?
+    var positionTwo : CGPoint?
     
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
@@ -74,6 +76,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func pop(node: SKNode) {
+        let sound = SKAction.playSoundFileNamed("Pop", waitForCompletion: true)
+        self.run(sound)
+        print("sound \(sound)")
+    }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         var nameA = ""
         var nameB = ""
@@ -97,6 +105,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
             
             if ((nameA == "ball") && (nameB.starts(with: "platform"))) || ((nameA.starts(with: "platform")) && (nameB == "ball")) {
+                pop(node: contact.bodyA.node!)
+                
                 faded(node: ball)
                 print("contact")
             }
@@ -113,11 +123,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 node.removeFromParent()
                 self.spawnBall = true
             } else if !self.spawnBall {
-                if let start = self.startTime, Date().timeIntervalSince1970 - start > 5.0 {
-                    self.faded(node: self.ball)
-                   node.removeFromParent()
-                   self.spawnBall = true
-                }
+                    self.positionTwo = self.postionOne
+                    self.postionOne = self.ball.position
+                    if self.positionTwo == self.postionOne {
+                        self.faded(node: self.ball)
+                        node.removeFromParent()
+                        self.spawnBall = true
+                        
+                    }
             }
         }
     }
