@@ -26,10 +26,18 @@ class StartScene: SKScene {
 
     }
     
+    func animation(node: SKNode ) {
+        let emittorNode = SKEmitterNode(fileNamed: "StartAnimation")
+        emittorNode?.position = node.position
+        self.addChild(emittorNode!)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let points = touch.location(in: self)
             if start!.contains(points) {
+                animation(node: start!)
+                start!.removeFromParent()
                 let gameScene = GameScene(fileNamed: "GameScene")
                 gameScene?.scaleMode = .aspectFill
                 self.view?.presentScene(gameScene!)
