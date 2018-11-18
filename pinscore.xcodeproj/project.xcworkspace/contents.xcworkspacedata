@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../../Downloads/pinscore music.m4a">
+   </FileRef>
+   <FileRef
       location = "self:pinscore.xcodeproj">
    </FileRef>
 </Workspace>

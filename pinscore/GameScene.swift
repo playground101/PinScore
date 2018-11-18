@@ -21,13 +21,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var endTime: TimeInterval?
     var positionOne : CGPoint?
     var positionTwo : CGPoint?
-
+    
     
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as? SKSpriteNode
         ballsLeftCounter = self.childNode(withName: "BallsLeft") as? SKLabelNode
         scoreLabel = self.childNode(withName: "scoreLabel") as? SKLabelNode
         self.physicsWorld.contactDelegate = self
+        playMusic()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -58,6 +59,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func gameOverScene() {
+        stopMusic()
         let videoGameOver = GameOverScene(fileNamed: "GameOverScene")
         videoGameOver?.size = self.size
         videoGameOver?.scaleMode = .aspectFill
@@ -76,6 +78,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             score += gameScore
             scoreLabel.text = "\(score)"
         }
+    }
+    
+    func playMusic() {
+        if let music = SKAction.init(named: "music") {
+            self.run(music)
+            print("Music")
+        }
+        
+    //    let music = SKAction.playSoundFileNamed("pinscore music.m4a", waitForCompletion: true)
+        
+        
+    }
+    
+    func stopMusic() {
+        self.removeAction(forKey: "music")
     }
     
     func pop(node: SKNode) {
@@ -108,7 +125,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if ((nameA == "ball") && (nameB.starts(with: "platform"))) || ((nameA.starts(with: "platform")) && (nameB == "ball")) {
                 pop(node: contact.bodyA.node!)
-                
                 faded(node: ball)
                 print("contact")
             }
@@ -125,16 +141,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 node.removeFromParent()
                 self.spawnBall = true
             } else if !self.spawnBall {
-                    self.positionTwo = self.positionOne
-                    self.positionOne = self.ball.position
-/*                var diffX = Double(self.positionOne?.x ?? 0) - Double(self.positionTwo?.x ?? 0)
-                var diffY = Double(self.positionOne?.y ?? 0) - Double(self.positionTwo?.y ?? 0)*/
+                self.positionTwo = self.positionOne
+                self.positionOne = self.ball.position
+                /*                var diffX = Double(self.positionOne?.x ?? 0) - Double(self.positionTwo?.x ?? 0)
+                 var diffY = Double(self.positionOne?.y ?? 0) - Double(self.positionTwo?.y ?? 0)*/
                 
                 if self.positionTwo == self.positionOne {                        self.faded(node: self.ball)
-                        node.removeFromParent()
-                        self.spawnBall = true
-                        
-                    }
+                    node.removeFromParent()
+                    self.spawnBall = true
+                    
+                }
             }
         }
     }
