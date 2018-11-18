@@ -17,6 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var ballsLeftCounter : SKLabelNode!
     var ballsLeft = 10
     var spawnBall = true
+    var canScore = true
     var startTime: TimeInterval?
     var endTime: TimeInterval?
     var positionOne : CGPoint?
@@ -55,6 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             ballsLeftCounter.text = "Balls Left: \(ballsLeft)"
             spawnBall = false
             startTime = Date().timeIntervalSince1970
+            canScore = true
         }
     }
     
@@ -74,9 +76,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     fileprivate func scoreManager(_ contactA: String, _ contactB: String, _ nameA: String, _ nameB: String, _ gameScore: Int) {
-        if (contactA == nameA && contactB == nameB) || (contactA == nameB && contactB == nameA){
+        if (contactA == nameA && contactB == nameB) || (contactA == nameB && contactB == nameA) && canScore {
             score += gameScore
             scoreLabel.text = "\(score)"
+            canScore = false
         }
     }
     
@@ -101,6 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("sound \(sound)")
     }
     
+    
     func didBegin(_ contact: SKPhysicsContact) {
         var nameA = ""
         var nameB = ""
@@ -123,15 +127,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
             
+            
             if ((nameA == "ball") && (nameB.starts(with: "platform"))) || ((nameA.starts(with: "platform")) && (nameB == "ball")) {
                 pop(node: contact.bodyA.node!)
                 faded(node: ball)
                 print("contact")
+                
+                scoreManager(nameA, nameB, "ball", "platform10", 10)
+                scoreManager(nameA, nameB, "ball", "platform20", 20)
+                scoreManager(nameA, nameB, "ball", "platform30", 30)
+                scoreManager(nameA, nameB, "ball", "platform40", 40)
+                
             }
-            scoreManager(nameA, nameB, "ball", "platform10", 10)
-            scoreManager(nameA, nameB, "ball", "platform20", 20)
-            scoreManager(nameA, nameB, "ball", "platform30", 30)
-            scoreManager(nameA, nameB, "ball", "platform40", 40)
+            
+            print("contact... \(nameA)... \(nameB)")
+            
         }
     }
     
