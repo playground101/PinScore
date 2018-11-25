@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04D8ACF921694FBC0040AF2A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8ACF821694FBC0040AF2A /* GameScene.swift */; };
 		B21BFC9C2197CACA00CFBF70 /* Pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B21BFC9B2197CACA00CFBF70 /* Pop.mp3 */; };
+		B280502921A9EB39003F6203 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = B280502821A9EB39003F6203 /* MyParticle.sks */; };
 		B29851ED217C1EF500A093BA /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B29851EC217C1EF500A093BA /* StartScene.sks */; };
 		B29851EF217C20AB00A093BA /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29851EE217C20AB00A093BA /* StartScene.swift */; };
 		CC0B1F662149C1790066FA25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B1F652149C1790066FA25 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		04D8ACF821694FBC0040AF2A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B21BFC9B2197CACA00CFBF70 /* Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pop.mp3; sourceTree = "<group>"; };
+		B280502821A9EB39003F6203 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		B29851EC217C1EF500A093BA /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
 		B29851EE217C20AB00A093BA /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		CC0B1F622149C1790066FA25 /* pinscore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinscore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				F467700821736697006501A8 /* GameOver.swift */,
 				CC0B1F692149C1790066FA25 /* Actions.sks */,
 				CC0B1F6D2149C1790066FA25 /* GameViewController.swift */,
+				B280502821A9EB39003F6203 /* MyParticle.sks */,
 				B21BFC9B2197CACA00CFBF70 /* Pop.mp3 */,
 				F46B33C721A1D14500E594F6 /* pinscore music.mp3 */,
 				CC34008A21A1D5F000DAE0DD /* StartAnimation.sks */,
@@ -159,6 +162,7 @@
 				CC34008B21A1D5F000DAE0DD /* StartAnimation.sks in Resources */,
 				CC0B1F732149C17A0066FA25 /* Assets.xcassets in Resources */,
 				B21BFC9C2197CACA00CFBF70 /* Pop.mp3 in Resources */,
+				B280502921A9EB39003F6203 /* MyParticle.sks in Resources */,
 				CC0B1F762149C17A0066FA25 /* LaunchScreen.storyboard in Resources */,
 				F46B33C821A1D14500E594F6 /* pinscore music.mp3 in Resources */,
 				F46770072173661A006501A8 /* GameOverScene.sks in Resources */,
