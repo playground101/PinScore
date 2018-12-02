@@ -39,7 +39,7 @@ class StartScene: SKScene {
                 animation(node: start!)
                 start!.removeFromParent()
                 let gameScene = GameScene(fileNamed: "GameScene")
-                gameScene?.scaleMode = .aspectFill
+                gameScene?.scaleMode = .aspectFit
                 self.view?.presentScene(gameScene!)
             }
         }

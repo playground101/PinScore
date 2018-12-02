@@ -35,7 +35,7 @@ class GameOverScene: SKScene {
             let points = touch.location(in: self)
             if restartLabel!.contains(points) {
                 let gameScene = GameScene(fileNamed: "GameScene")
-                gameScene?.scaleMode = .aspectFill
+                gameScene?.scaleMode = .aspectFit
                 self.view?.presentScene(gameScene!)
             }
         }

@@ -64,7 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         stopMusic()
         let videoGameOver = GameOverScene(fileNamed: "GameOverScene")
         videoGameOver?.size = self.size
-        videoGameOver?.scaleMode = .aspectFill
+        videoGameOver?.scaleMode = .aspectFit
         videoGameOver?.score = score
         let transition = SKTransition.fade(withDuration: 1.0)
         self.view?.presentScene(videoGameOver! , transition: transition)
