@@ -82,20 +82,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             canScore = false
         }
     }
+    var audioNode: SKAudioNode!
     
     func playMusic() {
-        if let music = SKAction.init(named: "music") {
-            self.run(music)
-            print("Music")
-        }
+        let node = SKAudioNode(fileNamed: "pinscore music")
+        self.addChild(node)
+        node.run(SKAction.play())
+        audioNode = node
+    }
         
     //    let music = SKAction.playSoundFileNamed("pinscore music.m4a", waitForCompletion: true)
         
         
-    }
+    
     
     func stopMusic() {
-        self.removeAction(forKey: "music")
+        audioNode.run(SKAction.stop())
     }
     
     func pop(node: SKNode) {
