@@ -85,6 +85,7 @@
 				CC0B1F652149C1790066FA25 /* AppDelegate.swift */,
 				F46770062173661A006501A8 /* GameOverScene.sks */,
 				F467700821736697006501A8 /* GameOver.swift */,
+				CC7F5CB421C6C121008C8B6F /* CreditsScene.sks */,
 				CC0B1F692149C1790066FA25 /* Actions.sks */,
 				CC0B1F6D2149C1790066FA25 /* GameViewController.swift */,
 				B280502821A9EB39003F6203 /* MyParticle.sks */,
@@ -95,7 +96,6 @@
 				CC0B1F722149C17A0066FA25 /* Assets.xcassets */,
 				CC0B1F742149C17A0066FA25 /* LaunchScreen.storyboard */,
 				CC0B1F772149C17A0066FA25 /* Info.plist */,
-				CC7F5CB421C6C121008C8B6F /* CreditsScene.sks */,
 			);
 			path = pinscore;
 			sourceTree = "<group>";
