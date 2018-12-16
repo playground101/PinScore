@@ -80,27 +80,91 @@
 		CC0B1F642149C1790066FA25 /* pinscore */ = {
 			isa = PBXGroup;
 			children = (
-				B29851EC217C1EF500A093BA /* StartScene.sks */,
-				B29851EE217C20AB00A093BA /* StartScene.swift */,
-				F4579E5921696637005174AB /* GameScene.sks */,
-				04D8ACF821694FBC0040AF2A /* GameScene.swift */,
-				CC0B1F652149C1790066FA25 /* AppDelegate.swift */,
-				F46770062173661A006501A8 /* GameOverScene.sks */,
-				F467700821736697006501A8 /* GameOver.swift */,
-				CC7F5CB421C6C121008C8B6F /* CreditsScene.sks */,
-				CC5141FB21C6C59100F627FB /* CreditsScene.swift */,
-				CC0B1F692149C1790066FA25 /* Actions.sks */,
-				CC0B1F6D2149C1790066FA25 /* GameViewController.swift */,
-				B280502821A9EB39003F6203 /* MyParticle.sks */,
-				B21BFC9B2197CACA00CFBF70 /* Pop.mp3 */,
-				F46B33C721A1D14500E594F6 /* pinscore music.mp3 */,
-				CC34008A21A1D5F000DAE0DD /* StartAnimation.sks */,
-				CC0B1F6F2149C1790066FA25 /* Main.storyboard */,
-				CC0B1F722149C17A0066FA25 /* Assets.xcassets */,
-				CC0B1F742149C17A0066FA25 /* LaunchScreen.storyboard */,
+				F4DAC28621C6C6E400C83B7C /* Source Files */,
+				F4DAC28421C6C66800C83B7C /* StartScene */,
+				F4DAC28521C6C6B600C83B7C /* GameScene */,
+				F4DAC28721C6C73F00C83B7C /* GameOver */,
+				F4DAC28821C6C76100C83B7C /* CreditsScene */,
+				F4DAC28921C6C79200C83B7C /* Sound Files */,
+				F4DAC28A21C6C7BB00C83B7C /* Animations */,
+				F4DAC28B21C6C7D900C83B7C /* Storyboard */,
 				CC0B1F772149C17A0066FA25 /* Info.plist */,
+				CC0B1F722149C17A0066FA25 /* Assets.xcassets */,
 			);
 			path = pinscore;
+			sourceTree = "<group>";
+		};
+		F4DAC28421C6C66800C83B7C /* StartScene */ = {
+			isa = PBXGroup;
+			children = (
+				B29851EE217C20AB00A093BA /* StartScene.swift */,
+				B29851EC217C1EF500A093BA /* StartScene.sks */,
+			);
+			path = StartScene;
+			sourceTree = "<group>";
+		};
+		F4DAC28521C6C6B600C83B7C /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				04D8ACF821694FBC0040AF2A /* GameScene.swift */,
+				F4579E5921696637005174AB /* GameScene.sks */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		F4DAC28621C6C6E400C83B7C /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				CC0B1F652149C1790066FA25 /* AppDelegate.swift */,
+				CC0B1F6D2149C1790066FA25 /* GameViewController.swift */,
+			);
+			path = "Source Files";
+			sourceTree = "<group>";
+		};
+		F4DAC28721C6C73F00C83B7C /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				F467700821736697006501A8 /* GameOver.swift */,
+				F46770062173661A006501A8 /* GameOverScene.sks */,
+			);
+			path = GameOver;
+			sourceTree = "<group>";
+		};
+		F4DAC28821C6C76100C83B7C /* CreditsScene */ = {
+			isa = PBXGroup;
+			children = (
+				CC5141FB21C6C59100F627FB /* CreditsScene.swift */,
+				CC7F5CB421C6C121008C8B6F /* CreditsScene.sks */,
+			);
+			path = CreditsScene;
+			sourceTree = "<group>";
+		};
+		F4DAC28921C6C79200C83B7C /* Sound Files */ = {
+			isa = PBXGroup;
+			children = (
+				F46B33C721A1D14500E594F6 /* pinscore music.mp3 */,
+				B21BFC9B2197CACA00CFBF70 /* Pop.mp3 */,
+			);
+			path = "Sound Files";
+			sourceTree = "<group>";
+		};
+		F4DAC28A21C6C7BB00C83B7C /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B280502821A9EB39003F6203 /* MyParticle.sks */,
+				CC0B1F692149C1790066FA25 /* Actions.sks */,
+				CC34008A21A1D5F000DAE0DD /* StartAnimation.sks */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		F4DAC28B21C6C7D900C83B7C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CC0B1F6F2149C1790066FA25 /* Main.storyboard */,
+				CC0B1F742149C17A0066FA25 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
