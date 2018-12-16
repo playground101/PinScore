@@ -8,3 +8,10 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
+
+
+class CreditsScene: SKScene {
+    var credits: SKLabelNode?
+    
+}

@@ -13,9 +13,11 @@ class StartScene: SKScene {
     var highScoreLabel: SKLabelNode?
     var score = 0
     var highScore = 0
+    var credits: SKLabelNode?
     
     override func didMove(to view: SKView) {
         start = self.childNode(withName: "start") as? SKLabelNode
+        credits = self.childNode(withName: "credits") as? SKLabelNode
         highScoreLabel = self.childNode(withName: "highScore") as? SKLabelNode
         
         let defaultHighScore = UserDefaults.standard.integer(forKey: "highscore")
@@ -23,7 +25,7 @@ class StartScene: SKScene {
             UserDefaults.standard.set(score, forKey: "highscore")
         }
         highScoreLabel?.text = "High Score: \(UserDefaults.standard.integer(forKey: "highscore"))"
-
+        
     }
     
     func animation(node: SKNode ) {
@@ -42,6 +44,16 @@ class StartScene: SKScene {
                 gameScene?.scaleMode = .aspectFit
                 self.view?.presentScene(gameScene!)
             }
+            
+            if credits!.contains(points) {
+                animation(node: credits!)
+                credits!.removeFromParent()
+                let creditsScene = CreditsScene(fileNamed: "CreditsScene")
+                creditsScene?.scaleMode = .aspectFit
+                self.view?.presentScene(creditsScene!)
+            }
+            
+            
         }
     }
 }
