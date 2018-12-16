@@ -11,7 +11,8 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    @IBOutlet weak var creditButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
