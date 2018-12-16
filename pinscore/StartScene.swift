@@ -13,6 +13,7 @@ class StartScene: SKScene {
     var highScoreLabel: SKLabelNode?
     var score = 0
     var highScore = 0
+    var credits: SKLabelNode?
     
     override func didMove(to view: SKView) {
         start = self.childNode(withName: "start") as? SKLabelNode
@@ -42,6 +43,19 @@ class StartScene: SKScene {
                 gameScene?.scaleMode = .aspectFit
                 self.view?.presentScene(gameScene!)
             }
+                
+    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+                    for touch in touches {
+                        let points = touch.location(in: self)
+                        if credits!.contains(points) {
+                            animation(node: credits!)
+                            credits!.removeFromParent()
+                            let creditsScene = CreditsScene(fileNamed: "CreditsScene")
+                            creditsScene?.scaleMode = .aspectFit
+                            self.view?.presentScene(creditsScene!)
+                        }
+            }
         }
     }
+}
 }
