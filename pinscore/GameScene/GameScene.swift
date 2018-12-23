@@ -22,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var endTime: TimeInterval?
     var positionOne : CGPoint?
     var positionTwo : CGPoint?
+    var isRemoved = false
     
     
     override func didMove(to view: SKView) {
@@ -34,11 +35,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if ballCounter < 10 {
-            
+            isRemoved = false
             let location = touches.first?.location(in: self)
             createBall(point: CGPoint(x: CGFloat((location?.x)!), y: CGFloat(self.frame.height/2)) )
-        } else {
-            gameOverScene()
+        } else if ballsLeft == 0 && isRemoved == true {
+           gameOverScene()
         } 
     }
     
@@ -148,9 +149,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval){
+      /*  if ballsLeft == 0 && isRemoved == true {
+            gameOverScene()
+        } */
         enumerateChildNodes(withName: "ball") { (node, block) in
             if node.alpha < 0.2 {
                 node.removeFromParent()
+                self.isRemoved = true
                 self.spawnBall = true
             } else if !self.spawnBall {
                 self.positionTwo = self.positionOne
