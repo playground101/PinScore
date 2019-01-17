@@ -195,7 +195,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Varshith;
+				ORGANIZATIONNAME = Playground;
 				TargetAttributes = {
 					CC0B1F612149C1790066FA25 = {
 						CreatedOnToolsVersion = 9.4.1;
