@@ -28,7 +28,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04A23F5421E2788200602F21 /* pinscore.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = pinscore.p12; sourceTree = "<group>"; };
 		04D8ACF821694FBC0040AF2A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B21BFC9B2197CACA00CFBF70 /* Pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pop.mp3; sourceTree = "<group>"; };
 		B280502821A9EB39003F6203 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
@@ -65,7 +64,6 @@
 		CC0B1F592149C1790066FA25 = {
 			isa = PBXGroup;
 			children = (
-				04A23F5421E2788200602F21 /* pinscore.p12 */,
 				CC0B1F642149C1790066FA25 /* pinscore */,
 				CC0B1F632149C1790066FA25 /* Products */,
 			);
